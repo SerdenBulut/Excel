@@ -1,7 +1,6 @@
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -49,7 +48,7 @@ public class ExcelProje extends JFrame {
 	public static void main(String[] args) {
 
 		ExcelProje excelProje = new ExcelProje("AVEA");
-		excelProje.setSize(500, 500);
+		excelProje.setSize(600, 500);
 		excelProje.setVisible(true);
 		excelProje.setLayout(new GridLayout(2, 1));
 		ExcelVeriOkuma excelVeriOkuma = new ExcelVeriOkuma();
@@ -64,8 +63,8 @@ public class ExcelProje extends JFrame {
 				excelProje.txt›cerik.setText(excelVeriOkuma.veriOkuma(
 						sayfaBelirleyici, excelProje.edtHat.getText()
 								.toString()));
-				excelVeriOkuma.veriDegistir(excelProje.txt›cerik.getText()
-						.toString(), sayfaBelirleyici);
+				excelVeriOkuma.veriEslestirme(sayfaBelirleyici,
+						excelProje.txt›cerik.getText().toString());
 
 			}
 		});

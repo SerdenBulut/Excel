@@ -8,17 +8,14 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelVeriOkuma {
-	FileInputStream file;
-	XSSFWorkbook workbook;
-	XSSFSheet sheet;
-	Iterator<Row> rowIterator;
-	Cell cell;
 
 	public int sayfaSecme(String sayfa) {
 		if (sayfa.equals("MW TEST01"))
@@ -38,18 +35,18 @@ public class ExcelVeriOkuma {
 			List<String> liste = new ArrayList<String>();
 			int uygunKayitSayisi = 0;
 			// Excel Dosya Yolu
-			file = new FileInputStream(new File("ssss.xltx"));
+			FileInputStream file = new FileInputStream(new File("ssss.xltx"));
 
 			// Excel Dosyamizi Temsil Eden Workbook Nesnesi
-			workbook = new XSSFWorkbook(file);
+			XSSFWorkbook workbook = new XSSFWorkbook(file);
 
 			// Excel Dosyasýnýn Hangi Sayfasý Ýle Çalýþacaðýmýzý Seçelim.
-			sheet = workbook.getSheetAt(sayfaBelirteci);
+			XSSFSheet sheet = workbook.getSheetAt(sayfaBelirteci);
 
 			// Belirledigimiz sayfa icerisinde tum satirlari tek tek dolasacak
 			// iterator nesnesi
-			rowIterator = sheet.iterator();
-
+			Iterator<Row> rowIterator = sheet.iterator();
+			Cell cell;
 			// Okunacak Satir Oldugu Surece
 			while (rowIterator.hasNext()) {
 
@@ -88,13 +85,13 @@ public class ExcelVeriOkuma {
 			}
 			Random random = new Random();
 
-			boolean sayiSeçme = true;
+			boolean sayiSecme = true;
 			int rastgeleSayi = 0;
-			while (sayiSeçme == true) {
+			while (sayiSecme == true) {
 				rastgeleSayi = random.nextInt(uygunKayitSayisi - 1);
 				if (rastgeleSayi != 0) {
 					System.out.println(rastgeleSayi);
-					sayiSeçme = false;
+					sayiSecme = false;
 				}
 			}
 
@@ -115,14 +112,15 @@ public class ExcelVeriOkuma {
 
 	}
 
-	public void veriDegistir(String veri, int sayfaBelirleyici) {
+	public void veriEslestirme(int sayfaBelirleyici, String veri) {
 		try {
-			file = new FileInputStream(new File("ssss.xltx"));
-			workbook = new XSSFWorkbook(file);
+			FileInputStream file = new FileInputStream(new File("ssss.xltx"));
+			XSSFWorkbook workbook = new XSSFWorkbook(file);
 
-			sheet = workbook.getSheetAt(sayfaBelirleyici);
+			XSSFSheet sheet = workbook.getSheetAt(sayfaBelirleyici);
 
-			rowIterator = sheet.iterator();
+			Iterator<Row> rowIterator = sheet.iterator();
+			Cell cell;
 			int satýrSayici = 1;
 			String tempVeri = "";
 			while (rowIterator.hasNext()) {
@@ -145,6 +143,7 @@ public class ExcelVeriOkuma {
 					}
 
 				}
+
 				if (tempVeri.trim().equals(veri.trim())) {
 					System.out.println(tempVeri);
 					System.out.println(veri);
@@ -155,20 +154,34 @@ public class ExcelVeriOkuma {
 			}
 
 			file.close();
-//			cell = sheet.getRow(satýrSayici).getCell(7);
-//			System.out.println(sheet.getRow(satýrSayici).getCell(7));
-//			cell.setCellValue("Pasif");
-
-//			FileOutputStream outFile = new FileOutputStream(new File(
-//					"ssss.xltx"));
-//			workbook.write(outFile);
-//
-//			outFile.close();
-
+			veriYaz(satýrSayici, sayfaBelirleyici);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException er) {
 			er.printStackTrace();
 		}
+	}
+
+	public static void veriYaz(int satir, int sayfaBelirleyici) {
+		satir = satir - 1;
+		try {
+			FileInputStream file = new FileInputStream(new File("ssss.xltx"));
+			XSSFWorkbook workbook = new XSSFWorkbook(file);
+			XSSFSheet sheet = workbook.getSheetAt(sayfaBelirleyici);
+			Cell cell = sheet.getRow(satir).getCell(7);
+			cell.setCellValue("Pasif");
+			FileOutputStream outFile = new FileOutputStream(new File(
+					"ssss.xltx"));
+			workbook.write(outFile);
+			outFile.close();
+
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 	}
 }

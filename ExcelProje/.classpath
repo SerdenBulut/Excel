@@ -2,16 +2,16 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="C:/Users/serden/workspace/ExcelProje/poi-3.13-beta1-20150723.jar"/>
-	<classpathentry kind="lib" path="C:/Users/serden/workspace/ExcelProje/poi-examples-3.13-beta1-20150723.jar"/>
-	<classpathentry kind="lib" path="C:/Users/serden/workspace/ExcelProje/poi-excelant-3.13-beta1-20150723.jar"/>
-	<classpathentry kind="lib" path="C:/Users/serden/workspace/ExcelProje/poi-ooxml-3.13-beta1-20150723.jar"/>
-	<classpathentry kind="lib" path="C:/Users/serden/workspace/ExcelProje/poi-ooxml-schemas-3.13-beta1-20150723.jar"/>
-	<classpathentry kind="lib" path="C:/Users/serden/workspace/ExcelProje/poi-scratchpad-3.13-beta1-20150723.jar"/>
-	<classpathentry kind="lib" path="C:/Users/serden/workspace/ExcelProje/lib/commons-codec-1.9.jar"/>
-	<classpathentry kind="lib" path="C:/Users/serden/workspace/ExcelProje/lib/commons-logging-1.1.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/serden/workspace/ExcelProje/lib/junit-4.12.jar"/>
-	<classpathentry kind="lib" path="C:/Users/serden/workspace/ExcelProje/lib/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="C:/Users/serden/workspace/ExcelProje/ooxml-lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/serden/Documents/GitHub/Excel/ExcelProje/poi-3.13-beta1-20150723.jar"/>
+	<classpathentry kind="lib" path="C:/Users/serden/Documents/GitHub/Excel/ExcelProje/poi-examples-3.13-beta1-20150723.jar"/>
+	<classpathentry kind="lib" path="C:/Users/serden/Documents/GitHub/Excel/ExcelProje/poi-excelant-3.13-beta1-20150723.jar"/>
+	<classpathentry kind="lib" path="C:/Users/serden/Documents/GitHub/Excel/ExcelProje/poi-ooxml-3.13-beta1-20150723.jar"/>
+	<classpathentry kind="lib" path="C:/Users/serden/Documents/GitHub/Excel/ExcelProje/poi-ooxml-schemas-3.13-beta1-20150723.jar"/>
+	<classpathentry kind="lib" path="C:/Users/serden/Documents/GitHub/Excel/ExcelProje/poi-scratchpad-3.13-beta1-20150723.jar"/>
+	<classpathentry kind="lib" path="C:/Users/serden/Documents/GitHub/Excel/ExcelProje/ooxml-lib/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/serden/Documents/GitHub/Excel/ExcelProje/lib/commons-codec-1.9.jar"/>
+	<classpathentry kind="lib" path="C:/Users/serden/Documents/GitHub/Excel/ExcelProje/lib/commons-logging-1.1.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/serden/Documents/GitHub/Excel/ExcelProje/lib/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="C:/Users/serden/Documents/GitHub/Excel/ExcelProje/lib/log4j-1.2.17.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
